@@ -38,6 +38,11 @@ class Sently::SmsTest < Test::Unit::TestCase
       end
     end
 
+    should "keep + prefixes" do
+      sms = Sently::Sms.new(" +47 12345678", "doh")
+      assert_equal(sms.format_number(" +47 12345678"), "+4712345678")
+    end
+
     should "raise on invalidate message length" do
       sms = Sently::Sms.new("123", "Well, if you like burgers give 'em a try sometime. I can't usually get 'em myself because my girlfriend's a vegitarian which pretty much makes me a vegitarian. But I do love the taste of a good burger. Mm-mm-mm. You know what they call a Quarter Pounder with cheese in France?")
 

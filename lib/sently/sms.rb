@@ -46,7 +46,7 @@ module Sently
     end
 
     def format_number(number)
-      formatted = number.scan(/\d+/i).join
+      formatted = number.gsub(/[^0-9+]/, '')
       return is_number_valid?(formatted) ? formatted : (raise SentlySMSException.new("Phone number (#{number}) is not formatted correctly"))
     end
 
