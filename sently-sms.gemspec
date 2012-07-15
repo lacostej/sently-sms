@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sently-sms}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jerome Lacoste"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/sently/configuration.rb",
     "lib/sently/sender.rb",
     "lib/sently/sms.rb",
+    "sently-sms.gemspec",
     "test/helper.rb",
     "test/sms_test.rb"
   ]
