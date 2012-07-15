@@ -1,0 +1,24 @@
+= sently-sms
+
+Sent.ly SMS Gem
+
+Heavily inspired by the Moonshado SMS Gem (http://rubygems.org/gems/moonshado-sms) in order to keep a relatively compatible API.
+
+== Usage
+
+Put this in Development and Test environment so no real SMS are sent out:
+  Sently::Sms.config = {
+    :test_env => true,
+    :username => nil,
+    :password => nil
+  }
+
+Production environment config:
+  Sently::Sms.config = {
+    :username => ENV['SENTLY_USER'],
+    :password => ENV['SENTLY_PASS']
+  }
+
+== Copyright
+
+Copyright (c) 2010 Moonshado, 2012 Jerome Lacoste, Inc. See LICENSE for details.

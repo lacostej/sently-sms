@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+#
+# a small program to send SMS from the command line using sently
+#
+
+if ARGV.length != 2
+	puts "USAGE: sently.rb \"1(555)1233\" \"the message\""
+	exit
+end
+
+require 'rubygems'
+require 'sently-sms'
+require 'parseconfig'
+
+email_config = ParseConfig.new(ENV['HOME']+'/.sently').params
+username = email_config['username']
+password = email_config['password']
+
+Sently::Sms.configure do |config|
+	config.username = username
+    config.password = password
+end
+
+p Sently::Sms.new(ARGV[0], ARGV[1]).deliver_sms
